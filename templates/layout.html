@@ -1,0 +1,31 @@
+
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+    <title>Youtube Video Downloader</title>
+</head>
+<body>
+    <main role="main">
+      <nav class="navbar navbar-expand-lg navbar-light bg-dark" style="background-color: #faf9fa;">
+        <div class="container-fluid">
+            <a href="{{ url_for('home') }}" class="navbar-brand">
+                <img src="https://upload.wikimedia.org/wikipedia/commons/thumb/9/9d/Circle-icons-download.svg/768px-Circle-icons-download.svg.png" height="28" alt="Youtube Video Downloader" style="display: inline-block"><span> YT Video Downloader</span>
+            </a>
+        </div>
+    </nav>
+    
+      <span ><h3 style="text-align: center;"><img src="https://nayanbastola.com/wp-content/uploads/2022/06/cropped-Pink_Elegant_Lash_Makeup_Brow_artist_Beauty_Logo__2_-removebg-preview-removebg-preview.png" height="68" alt="Nayan Bastola" style="display: inline-block;"> <b>&emsp;Youtube Video Downloader</b> </h3></span>
+      <hr>
+      {%block content%}
+      {%endblock%}
+    </main>
+      
+      <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.6.1/jquery.min.js"></script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</body>
+</html>

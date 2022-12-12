@@ -1,0 +1,27 @@
+{% extends 'layout.html' %}
+
+{%block content %}
+<p style="text-align: center;">Convert and download all YouTube videos to high quality <i><b>.mp4</b></i> file type. </p>
+<div class="container">
+    
+    <div class="row" style=" border: 1px solid #bbadad; border-radius: 5px; margin: auto; padding: 0px; ">
+      <div class="col-md-6">
+        <span><img src="{{url.thumbnail_url}}" class="img-fluid img-thumbnail img-rounded"  alt="Video_Thumbnail"  style=" width: 80%;height: 250px;" ></span>
+      </div>
+      <div class="col-md-6">
+        <h4><b>{{url.title}}</b></h4>
+            <form action="{{url_for('downloadVideo')}}" method="POST">
+                <select class="form-select" aria-label="Default select example" name="itag" style="width: 250px;padding: 8px;" required> 
+                  <option value="" selected disabled hidden>Choose Resolution</option>
+                    {% for i in url.streams.filter(progressive=True) %}
+                    <option value="{{i.itag}}">{{i.resolution}}</option>
+                    {%endfor%}
+                  </select>
+                   <br><br><button type="submit" class="btn btn-danger">Download</button>
+            </form> 
+      </div>
+    </div>
+</div>
+
+
+{%endblock%}

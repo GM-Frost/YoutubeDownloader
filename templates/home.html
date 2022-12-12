@@ -1,0 +1,59 @@
+{% extends 'layout.html' %}
+
+{%block content %}
+
+<div class="container">
+    <h3 align='center'>Select your desired format</h3>
+    <div class="container">
+     
+      <ul id="myTabs" class="nav nav-pills nav-justified" role="tablist" data-tabs="tabs">
+        <li class="active"><a href="#mp3" data-toggle="tab">Mp3 Download</a></li>
+        <li><a href="#video" data-toggle="tab">HD Video Download</a></li>
+      </ul>
+      <div class="tab-content" >
+        <div role="tabpanel" class="tab-pane fade in active" id="mp3">
+            <br>
+            <form method="POST" name="mp3">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter the Youtube URL" name="youtubeURL">
+                    <input type="hidden" class="form-control" name="requestFormat" value="audioFormat">
+
+                    <span class="input-group-btn">
+                      <button class="btn btn-info" type="submit">
+                          <i class="fa fa-search">Convert Mp3</i>
+                      </button>
+                    </span>
+                  </div>
+                  <br>
+                  <div style="text-align: center; color:red; font-weight: bold;">{{url}}</div>
+                  {% for err in errors %}
+                  <div style="text-align: center; color:red; font-weight: bold;">{{err}}</div>
+                  
+                  {%endfor%}
+            </form>
+         
+        </div>
+
+        <div role="tabpanel" class="tab-pane fade" id="video">
+            <br>
+            <form method="POST" name="video">
+                <div class="input-group">
+                    <input type="text" class="form-control" placeholder="Enter the Youtube URL" name="youtubeURL">
+                    <input type="hidden" class="form-control" name="requestFormat" value="videoFormat">
+                    <span class="input-group-btn">
+                      <button class="btn btn-danger" type="submit" name="video">
+                          <i class="fa fa-search">Convert HD Video</i>
+                      </button>
+                    </span>
+                  </div>
+            </form>
+          
+        </div>
+      </div>
+    </div>
+    
+</div>
+
+
+   
+{%endblock content %}
